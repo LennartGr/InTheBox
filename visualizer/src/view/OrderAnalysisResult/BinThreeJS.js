@@ -15,10 +15,15 @@ export default function BinThreeJS(props) {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(45, props.width / props.height, 1, 1000);
         // vision slightly from above
-        // TODO adapt perspective to bin size so that bin can be seen entirely
-        camera.position.z = 0
-        camera.position.x = 4
-        camera.position.y = 2
+
+        // Calculate the distance based on the maximum dimension of the cuboid
+        const maxDimension = Math.max(props.bin.x, props.bin.y, props.bin.z);
+        const distance = maxDimension / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2));
+
+        // Set the camera position to ensure the cuboid is entirely visible (1.5 as factor for z pratically turns out to be good choice)
+        camera.position.z = distance * 1.5;
+        camera.position.x = maxDimension / 2;
+        camera.position.y = maxDimension / 2;
 
         // Create a ThreeJS renderer and attach it to the canvas
         const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current });

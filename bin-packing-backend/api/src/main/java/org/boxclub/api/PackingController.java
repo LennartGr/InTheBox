@@ -1,5 +1,7 @@
 package org.boxclub.api;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import org.boxclub.core.datatypes.*;
 import org.boxclub.core.packing.BruteforceSolver;
 import org.boxclub.core.packing.LargestAreaFitFirstSolver;
@@ -31,14 +33,21 @@ public class PackingController {
     @PostMapping("/order-analysis")
     public OrderAnalysisResponse analyseOrders(@RequestBody OrderAnalysisRequest request) {
         // TODO code here (currently stub)
-        Bin testbin = new Bin("mybin", 1, 1, 1, 1, 1, -1);
+        final int min = 1;
+        final int max = 4;
         
         BinRecommandation[] binRecommandations = new BinRecommandation[request.maxSizes() + 1];
         binRecommandations[0] = null;
+
+        Integer currentId = 0;
         for (int i = 1; i < request.maxSizes() + 1; i++) {
             Bin[] binArray = new Bin[i];
             for (int j = 0; j < i; j++) {
                 // i times the same bin for illustration
+                int randomX = ThreadLocalRandom.current().nextInt(min, max + 1);
+                int randomY = ThreadLocalRandom.current().nextInt(min, max + 1);
+                int randomZ = ThreadLocalRandom.current().nextInt(min, max + 1);
+                Bin testbin = new Bin((currentId++).toString(), randomX, randomY, randomZ, 1, 1, -1);
                 binArray[j] = testbin;
             }
 
