@@ -2,23 +2,34 @@ import React from 'react';
 import { Box, Card, CardContent, CardActions, Typography, Button } from '@mui/material';
 import BinThreeJS from './BinThreeJS';
 
-export default function BinCard({ bin }) {
+export default function BinCard(props) {
+
+    const additionalInfo = props.isMarketBin ?
+        (<>
+            <Typography>
+                offerer: {props.offerer} <br />
+                price: {props.price}€
+            </Typography>
+        </>) :
+        (<></>)
+
 
     return (
         <Card>
             <CardContent>
                 <Box display="flex" alignItems="center" justifyContent="center">
-                    <BinThreeJS bin={bin} width={250} height={250} />
+                    <BinThreeJS bin={props.bin} width={250} height={250} />
                 </Box>
                 <Typography>
-                    x: {bin.x} <br />
-                    y: {bin.y} <br />
-                    z: {bin.z}
+                    x: {props.bin.x} <br />
+                    y: {props.bin.y} <br />
+                    z: {props.bin.z}
                 </Typography>
+                {additionalInfo}
             </CardContent>
             <CardActions>
                 <Button size="small" color="primary">
-                    See online
+                    { props.isMarketBin ? "Shop online" : "Contact manufacturer" }
                 </Button>
             </CardActions>
         </Card>
