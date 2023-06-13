@@ -61,7 +61,7 @@ export function OrderAnalysisResult() {
                 <Typography variant="h5" align="center" color="textSecondary" paragraph>
                     We provide both a recommandation based of bins available on the market 
                     as well as a recommandation where bin sizes are optimized freely.
-                    If you choose the second option, your packing will be even more effective in most cases!
+                    If you choose the second option, your packaging will be even more effective in most cases!
                 </Typography>
                 <ToggleButtonGroup
                     color="primary"
@@ -94,7 +94,7 @@ export function OrderAnalysisResult() {
                 </Box>
                 <Typography variant="h5" align="center" color="textSecondary" paragraph>
                     The recommandation for this specific number of different sizes results in
-                    an average use of volume of {currentBinRecommandation.volumeUsed * 100}%
+                    an average <b>use of volume of {(currentBinRecommandation.volumeUsed * 100) | 0}%</b>
                 </Typography>
             </Container>
         </Box>

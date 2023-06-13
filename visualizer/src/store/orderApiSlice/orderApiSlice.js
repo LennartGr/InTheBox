@@ -2,32 +2,16 @@ import { createSlice, createAction } from "@reduxjs/toolkit";
 import { postOrderAnalysis } from "../../client/client";
 import { dimensionEqual } from "../../helper/boxHelper";
 
+// defines initial items for demonstration
+import initalItemsArray from "./initialItems" 
+
 const findById = (arr, id) => {
     return arr.filter(el => el.id === id)[0];
 }
 
 const initialState = {
     requestData: {
-        items: [
-            {
-                orderId: 0,
-                id: 0,
-                x: 144,
-                y: 53,
-                z: 115,
-                count: 1,
-                weight: 1,
-            },
-            {
-                orderId: 0,
-                id: 1,
-                x: 142,
-                y: 51,
-                z: 92,
-                count: 1,
-                weight: 1,
-            }
-        ],
+        items: initalItemsArray,
         algorithm: "LARGEST_AREA_FIT_FIRST",
         // TODO set this somewhere
         maxSizes: 5,
