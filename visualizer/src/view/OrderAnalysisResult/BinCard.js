@@ -21,9 +21,9 @@ export default function BinCard(props) {
                     <BinThreeJS bin={props.bin} width={250} height={250} />
                 </Box>
                 <Typography>
-                    x: {props.bin.x} <br />
-                    y: {props.bin.y} <br />
-                    z: {props.bin.z}
+                    x: {props.bin.x} cm<br />
+                    y: {props.bin.y} cm<br />
+                    z: {props.bin.z} cm
                 </Typography>
                 {additionalInfo}
             </CardContent>

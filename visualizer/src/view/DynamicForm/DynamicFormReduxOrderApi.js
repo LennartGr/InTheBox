@@ -15,10 +15,10 @@ export function DynamicFormReduxOrderApi(props) {
     const formBoxLine = (id) => ([
         <TextField onChange={(e) => dispatch(setRequestDataBoxAttr({id, key: "orderId", val: e.target.value}))} id={`orderId-${id}`} key={`orderId-${id}`} label="Order ID" variant="outlined" value={findById(formState, id).orderId}/>,
         <TextField onChange={(e) => dispatch(setRequestDataBoxAttr({id, key: "count", val: e.target.value}))} id={`count-${id}`} key={`count-${id}`} label="Count" variant="outlined" value={findById(formState, id).count}/>,
-        <TextField onChange={(e) => dispatch(setRequestDataBoxAttr({id, key: "x", val: e.target.value}))} id={`x-${id}`} key={`x-${id}`} label="x" variant="outlined" value={findById(formState, id).x}/>,
-        <TextField onChange={(e) => dispatch(setRequestDataBoxAttr({id, key: "y", val: e.target.value}))} id={`y-${id}`} key={`y-${id}`} label="y" variant="outlined" value={findById(formState, id).y}/>,
-        <TextField onChange={(e) => dispatch(setRequestDataBoxAttr({id, key: "z", val: e.target.value}))} id={`z-${id}`} key={`z-${id}`} label="z" variant="outlined" value={findById(formState, id).z}/>,
-        <TextField onChange={(e) => dispatch(setRequestDataBoxAttr({id, key: "weight", val: e.target.value}))} id={`weight-${id}`} key={`weight-${id}`} label="Weight" variant="outlined" value={findById(formState, id).weight}/>,
+        <TextField onChange={(e) => dispatch(setRequestDataBoxAttr({id, key: "x", val: e.target.value}))} id={`x-${id}`} key={`x-${id}`} label="x (cm)" variant="outlined" value={findById(formState, id).x}/>,
+        <TextField onChange={(e) => dispatch(setRequestDataBoxAttr({id, key: "y", val: e.target.value}))} id={`y-${id}`} key={`y-${id}`} label="y (cm)" variant="outlined" value={findById(formState, id).y}/>,
+        <TextField onChange={(e) => dispatch(setRequestDataBoxAttr({id, key: "z", val: e.target.value}))} id={`z-${id}`} key={`z-${id}`} label="z (cm)" variant="outlined" value={findById(formState, id).z}/>,
+        <TextField onChange={(e) => dispatch(setRequestDataBoxAttr({id, key: "weight", val: e.target.value}))} id={`weight-${id}`} key={`weight-${id}`} label="Weight (gramm)" variant="outlined" value={findById(formState, id).weight}/>,
     ]);
 
     const handleAddRow = () => {
@@ -49,7 +49,7 @@ export function DynamicFormReduxOrderApi(props) {
                     color="error"
                     disabled={formState.length === 0}
                     >
-                    Delete Last Box Type
+                    Delete Last Order Item
                 </Button>
 
                 <Button 
@@ -57,7 +57,7 @@ export function DynamicFormReduxOrderApi(props) {
                     onClick={handleAddRow}
                     sx={{marginTop: `10px`, marginRight: "1%"}}
                     >
-                    Add Box Type
+                    Add Order Item
                 </Button> 
                 
                 <div></div>

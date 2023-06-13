@@ -13,7 +13,7 @@ function App() {
             
             <div style={{display: "grid", placeItems: "center", gridTemplateRows: "repeat(2, fr)", rowGap: "10px"}}>
                 <Button variant="contained" onClick={() => navigate("/bin-input")}>
-                    Start Scanning
+                    Bin Packing
                 </Button>
                 <br />
                 <Button variant="contained" onClick={() => navigate("/order-history")}>

@@ -51,10 +51,10 @@ export function OrderHistory() {
         </FormControl>
 
         <>
-            <Typography>Maximal number of different sizes:</Typography>
+            <Typography>Maximal number of different bin sizes:</Typography>
             <Input value={maxSizes} onChange={(event) => dispatch(setRequestDataMaxSizes(event.target.value))} />
         </>
 
-        <DynamicFormReduxOrderApi title={"Specify Bins"} onSubmit={onSubmit} />
+        <DynamicFormReduxOrderApi title={"Specify Order Items"} onSubmit={onSubmit} />
     </>);
 }
