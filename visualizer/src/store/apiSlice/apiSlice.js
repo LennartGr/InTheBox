@@ -11,9 +11,9 @@ const initialState = {
     requestData: {
         bins: [{
             id: 0,
-            x: 215,
-            y: 70,
-            z: 166,
+            x: 52,
+            y: 52,
+            z: 52,
             count: 1,
             maxWeight: 1000,
             emptyWeight: 1,
@@ -21,22 +21,30 @@ const initialState = {
         items: [
             {
                 id: 0,
-                x: 144,
-                y: 53,
-                z: 115,
-                count: 1,
-                weight: 1,
+                x: 10,
+                y: 40,
+                z: 50,
+                count: 2,
+                weight: 200,
             },
             {
                 id: 1,
-                x: 142,
-                y: 51,
-                z: 92,
+                x: 25,
+                y: 30,
+                z: 50,
                 count: 1,
-                weight: 1,
+                weight: 100,
+            },
+            {
+                id: 2,
+                x: 45,
+                y: 25,
+                z: 30,
+                count: 1,
+                weight: 150,
             }
         ],
-        algorithm: "LARGEST_AREA_FIT_FIRST",
+        algorithm: "BRUTEFORCE",
         binLimit: 1,
     },
     response: {
