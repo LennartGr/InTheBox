@@ -15,7 +15,7 @@ export function OrderAnalysisResult() {
 
     // number of different sizes we're currently showing our recommandation for
     const [numberBoxes, setNumberBoxes] = useState(1);
-    const [marketMode, setMarketMode] = useState(false);
+    const [marketMode, setMarketMode] = useState(true);
 
     // case failure
     if (!data || !data.binRecommandations || data.binRecommandations.length === 0) {
